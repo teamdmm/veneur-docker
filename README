@@ -1,3 +1,14 @@
 # Veneur, in Docker
 
-This repository provides a Dockerfile and config.yaml for running [Veneur](https://github.com/stripe/veneur) for Meetup's classic environment. Veneur is a server implementation of the DogStatsD protocol for aggregating metrics and sending them to downstream storage.
+This repository provides a Dockerfile and config.yaml for running [Veneur](https://github.com/stripe/veneur) for Superphone environment. Veneur is a server implementation of the DogStatsD protocol for aggregating metrics and sending them to downstream storage. As downstream storage we use datadog.
+
+On AWS, we use veneur-docker image as dockerized version of Veneur server, running on EC2 instance.
+
+### Get started
+We are passing datadog API key as a ENV var, replace ${DD_API_KEY} with your datadog API key.
+```
+docker run -t --name veneur -e DD_API_KEY=${DD_API_KEY} -p 8126:8126/udp -p 8127:8127  superphone/veneur-docker
+
+```
+
+NOTE: Docker image is stored on Dockerhub public repository [superphone/veneur-docker](https://hub.docker.com/r/superphone/veneur-docker/)

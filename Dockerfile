@@ -50,6 +50,6 @@ RUN go build -a -v -ldflags "-X github.com/stripe/veneur.VERSION=$(git rev-parse
 ADD config.yaml /go/src/github.com/stripe/veneur/
 
 ADD run.sh /go/src/github.com/stripe/veneur/
-RUN chmod 777 /go/src/github.com/stripe/veneur/run.sh 
+RUN chmod 777 /go/src/github.com/stripe/veneur/run.sh
 
 CMD /go/src/github.com/stripe/veneur/run.sh

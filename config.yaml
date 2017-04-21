@@ -21,9 +21,8 @@ aggregates:
  - "count"
 read_buffer_size_bytes: 2097152
 stats_address: "0.0.0.0:8125"
-#tags:
-# - "foo:bar"
-# - "baz:quz"
+tags:
+ - "superphone"
 udp_address: "0.0.0.0:8126"
 #http_address: "einhorn@0"
 http_address: "0.0.0.0:8127"
